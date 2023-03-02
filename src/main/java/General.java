@@ -59,14 +59,17 @@ public class General {
                                 " VALUES ('" + fio + "'," + (sum - price) + ");");
                     } else {
                         System.out.println("Недостаточно средств на балансе");
+                        connection.close();
                         System.exit(1);
                     }
                 } else {
                     System.out.println("Неверный ввод");
+                    connection.close();
                     System.exit(1);
                 }
             } else {
                 System.out.println("Такого юзера нет");
+                connection.close();
             }
         } catch (SQLException e) {
             throw new RuntimeException(e);
